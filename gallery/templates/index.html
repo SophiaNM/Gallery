@@ -1,0 +1,80 @@
+
+{%extends 'base.html'%}
+{% block content %}
+
+{{block.super}}
+
+
+
+<div class="container">
+    <!-- Looping through news -->
+    <div class="row">
+    {% for image in images %}
+
+        <!-- displaying News articles -->
+         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+             <h2 class="text-center">{{ image.name}} </h2>
+             <p></p>
+             <p>{{image.description}}</p>
+             <p>{{image.image_location.name}}</p>
+             <p>{{image.image_category.name}}</p>
+
+             <!-- Displaying news Article images -->
+             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
+                 <!-- <button type="button" class="btn btn-success btn-sm m-1" > Delete</button> -->
+                 <img src="{{image.pic.url}}" class="img-thumbnail" alt="Image" data-toggle="modal" data-target="#deleteModal">
+             </div>
+         </div>
+         {% for image in images %}
+         <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteModalLabel">Image Post</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
+                                <img src="{{image.pic.url}}" class="img-thumbnail" alt="Image">
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{image.description}}</p>
+                                <p>{{image.image_location.name}}</p>
+                                <p>{{image.image_category.name}}</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Copy Link</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+            {% endfor %}
+
+
+    {% empty %}
+</div>
+    <div class="row">
+        <h2 class="text-center"> No image </h2>
+
+    </div>
+    {% endfor %}
+
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}
