@@ -4,12 +4,14 @@
 
 {{block.super}}
 
-<!-- <div class="container top">
-    <div class="logo wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
-        <h1><a href="index.html">SOPHY'S BLOG</a></h1>
-        <p><label class="of"></label>CHANGING YOUR MIND ONE POST AT A TIME<label class="on"></label></p>
-    </div>
-</div> -->
+<script>
+  function myFunction() {
+    var copyText = document.getElementById("link");
+    copyText.select();
+    document.execCommand("Copy");
+    alert("Copied the text: " + copyText.value);
+  }
+</script>
 
 <div class="banner">
     <div class="cover">
@@ -97,7 +99,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Copy Link</button>
+                    <input class="form-control" type="text" value="{{image.image_link}}" id="link">
+                   <a onclick="myFunction()"><button type="button"  class="btn btn-primary">Copy Link</button></a>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
                 </div>
