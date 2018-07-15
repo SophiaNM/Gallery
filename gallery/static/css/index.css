@@ -19,11 +19,6 @@ div#navbarNav.collapse.navbar-collapse{
 ul.navbar-nav{
     padding-left: 300px;
 }
-/* .post{
-    padding-top: 50px;
-    text-decoration: none;
-    color:  #2291d8;
-} */
 li.nav-item{
     padding:0px  20px;
 }
@@ -46,7 +41,6 @@ a.nav-item.nav-link.brand{
 }
 a.nav-item.nav-link.ml-auto{
     color: #000;
-    /* padding: 40px 20px; */
 }
 
 a.nav-item.nav-link.brand.opaque:hover{
@@ -129,11 +123,16 @@ div.navbar-nav.ml-auto{
 .social-buttons a:hover {
     color: #d18a19;
 }
+.abt{
+    margin: 5px 50px ;
+    text-align: center;
+}
+.text-muted.abt{
+    font-size: 15px;
+}
+/* End of Navbar Styles */
+
 /* Styles for the home page*/
-
-
-
-
 /*-- Header --*/
 form.form{
     width: 70%;
@@ -167,10 +166,10 @@ small{
     float: left !important;
     margin-right: -15px;
 }
+/* End of Header */
 
 
-
-/*--banner--*/
+/*--Banner--*/
 div.container.image{
     padding: 6em 0 0;
 }
@@ -199,17 +198,17 @@ min-height: 400px;
 .cover{
     min-height: 450px;
     width: inherit;
-    background: rgba(0,0,0,0.6)
+    background: rgba(0,0,0,0.8)
 }
 .cover-1{
     min-height: inherit;
     width: inherit;
-    background: rgba(0,0,0,0.6)
+    background: rgba(0,0,0,0.8)
 }
 .banner-1{
 background: url(../images/landing2.jpg) no-repeat 0px 0px;
 background-size:cover;
-background-position: bottom;
+background-position: center;
 -webkit-background-size: cover;
 -o-background-size: cover;
 -ms-background-size: cover;
@@ -233,7 +232,6 @@ min-height: 250px;
     color: #fff;
 }
 .banner {
-    /* padding: 10em 0 0; */
     text-align: center;
 }
 .banner p {
@@ -244,6 +242,7 @@ min-height: 250px;
     margin: 5em auto 1em;
     width: 70%;
 }
+/* End of Banner */
 
 
 /* Image Gallery Section */
@@ -255,8 +254,7 @@ div.col-xs-6.col-sm-4.col-md-3.col-lg-3{
     margin-top: 3em;
 }
 .image{
-    width: 100%
-    /* padding:20px; */
+    width: 100%;
 }
 
 .head-content{
@@ -307,11 +305,11 @@ div.col-xs-6.col-sm-4.col-md-3.col-lg-3{
 }
 
 .hovereffect:hover img {
-  filter: brightness(0.6);
-  -webkit-filter: brightness(0.6);
-  -moz-filter: brightness(0.6);
-  -o-filter: brightness(0.6);
-  -ms-filter: brightness(0.6);
+  filter: brightness(0.1);
+  -webkit-filter: brightness(0.1);
+  -moz-filter: brightness(0.1);
+  -o-filter: brightness(0.1);
+  -ms-filter: brightness(0.1);
 }
 
 .hovereffect h4 {
@@ -353,8 +351,6 @@ div.col-xs-6.col-sm-4.col-md-3.col-lg-3{
 .portfolio-wrap {
     padding: 0 4px;
 }
-/*-- Products-Portfolio --*/
-
 
 .desc{
     padding-top: 10px;
@@ -368,3 +364,15 @@ div.modal-content{
     min-width: 800px;
     min-height: 600px;
 }
+#about div.modal-dialog{
+    min-width: 280px;
+    border-radius: 15px;
+}
+#about div.modal-content{
+    min-width: 280px;
+    border-radius: 15px;
+}
+h5.modal-title{
+    margin-left: 160px;
+}
+/* End of Gallery styles */
