@@ -17,14 +17,16 @@ def index(request):
 
     return render(request, 'index.html', {'title':title, 'images':images, 'locations':locations})
 
-def single(request,image_id):
-    # images = Image.get_all_images()
-
+def single(request,category_name,image_id):
+    # images = Image.get_image_by_id(image_id)
+    locations = Location.objects.all()
+    # category = Category.get_category_id(id = image_category)
+    image_category = Image.objects.filter(image_category__name = category_name)
     try:
         image = Image.objects.get(id = image_id)
     except DoesNotExist:
         raise Http404()
-    return render(request,"index.html",{"image":image})
+    return render(request,"single.html",{"image":image, "locations":locations, "image_category":image_category})
 
 def search_image(request):
     categories = Category.objects.all()
