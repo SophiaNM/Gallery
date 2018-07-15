@@ -18,7 +18,7 @@ class Location(models.Model):
         self.delete()
 
     def update_location(self, update):
-        self.photo_location = update
+        self.name = update
         self.save()
 
     @classmethod
@@ -40,7 +40,7 @@ class Category(models.Model):
         self.delete()
 
     def update_category(self, update):
-        self.photo_category = update
+        self.name = update
         self.save()
 
     @classmethod
@@ -55,6 +55,7 @@ class Image(models.Model):
     name = models.CharField(max_length = 60)
     pic = models.ImageField(upload_to = 'uploads/')
     description = models.TextField()
+    image_link = models.CharField(max_length=500)
     image_location = models.ForeignKey('Location')
     image_category = models.ForeignKey('Category')
 
@@ -64,8 +65,8 @@ class Image(models.Model):
     def delete_image(self):
         self.delete()
 
-    def update_image(self):
-        self.update()
+    def update_image(self, update):
+        self.update(name)
 
     @classmethod
     def get_all_images(cls):
@@ -73,8 +74,8 @@ class Image(models.Model):
         return images
 
     @classmethod
-    def get_image_by_id(cls,image_id):
-        image = cls.objects.filter(image_id= id).all()
+    def get_image_by_id(cls,id):
+        image = cls.objects.filter(id= id).all()
         return image
 
     @classmethod
