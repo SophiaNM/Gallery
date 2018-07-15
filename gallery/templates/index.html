@@ -4,60 +4,58 @@
 
 {{block.super}}
 
+<!-- <div class="container top">
+    <div class="logo wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+        <h1><a href="index.html">SOPHY'S BLOG</a></h1>
+        <p><label class="of"></label>CHANGING YOUR MIND ONE POST AT A TIME<label class="on"></label></p>
+    </div>
+</div> -->
+
+<div class="banner">
+    <div class="cover">
+        <div class="container image">
+            <h2>Contrary to popular belief, Lorem Ipsum simply</h2>
+            <form class="form" role="search" action="{% url 'search_image' %}">
+
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="&#xf3ee; Search by category" name="image_category">
+                  <br>
+                 </div>
+
+                 <small>Trending searches: fashion, travel</small>
+
+              </form>
+            <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </p>
+            <a href="singlepage.html">VIEW GALLERY</a>
+        </div>
+    </div>
+</div>
 
 
-<div class="container">
+<div class="container wrap">
     <!-- Looping through news -->
     <div class="row">
     {% for image in images %}
 
         <!-- displaying News articles -->
-         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-             <h2 class="text-center">{{ image.name}} </h2>
-             <p></p>
-             <p>{{image.description}}</p>
-             <p>{{image.image_location.name}}</p>
-             <p>{{image.image_category.name}}</p>
+         <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
 
-             <!-- Displaying news Article images -->
-             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                  <!-- <button type="button" class="btn btn-success btn-sm m-1" > Delete</button> -->
-                 <img src="{{image.pic.url}}" class="img-thumbnail" alt="Image" data-toggle="modal" data-target="#deleteModal">
-             </div>
+                 <div class="portfolio-wrap ">
+                     <div class="portfolio-wrap hovereffect">
+                         <a class="img-overlay" data-toggle="modal" data-target="#{{image.id}}" style="width:100%">
+                             <!-- <img src="images/1.jpg" alt=" " class="img-responsive"> -->
+                             <img src="{{image.pic.url}}" href="" class="image" alt="Image" >
+                             <div class="overlay">
+                                 <h4>{{image.name}}</h4>
+                             </div>
+                         </a>
+                     </div>
+                 </div>
          </div>
-         {% for image in images %}
-         <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="deleteModalLabel">Image Post</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
-                                <img src="{{image.pic.url}}" class="img-thumbnail" alt="Image">
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{image.description}}</p>
-                                <p>{{image.image_location.name}}</p>
-                                <p>{{image.image_category.name}}</p>
 
-                            </div>
 
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Copy Link</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-            {% endfor %}
 
 
     {% empty %}
@@ -67,7 +65,46 @@
 
     </div>
     {% endfor %}
+{% for image in images %}
+    <div class="modal fade" id="{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Image Post</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-9 col-lg-9">
+                            <img src="{{image.pic.url}}" class="img-thumbnail" alt="Image">
+                        </div>
+                        <div class="col-md-3">
+                            <h4>Location</h4>
+                            <p>{{image.image_location.name}}</p>
+                            <h4>Category</h4>
+                            <p>{{image.image_category.name}}</p>
 
+                        </div>
+                        <div class="">
+
+                            <h2 class="desc">{{image.name}}</h2>
+
+                            <p class="desc">{{image.description}}</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Copy Link</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+        {% endfor %}
 </div>
 
 
