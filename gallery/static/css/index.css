@@ -1,4 +1,10 @@
 
+
+html, body{
+    font-family: 'Raleway', sans-serif;
+    font-size: 100%;
+
+}
 /* Navbar Styling */
 div.container.navigation{
     height: 62px;
@@ -11,13 +17,14 @@ nav.navbar.navbar-expand-lg.navbar-light{
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
     background-color:#fff;
+    font-size: 17px;
 
 }
 div#navbarNav.collapse.navbar-collapse{
     width: 100%;
 }
 ul.navbar-nav{
-    padding-left: 300px;
+    padding-left: 240px;
 }
 li.nav-item{
     padding:0px  20px;
