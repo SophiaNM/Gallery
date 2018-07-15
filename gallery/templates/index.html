@@ -14,7 +14,7 @@
 <div class="banner">
     <div class="cover">
         <div class="container image">
-            <h2>Contrary to popular belief, Lorem Ipsum simply</h2>
+            <h2 id="category">If you can't make it good, at least make it look good.</h2>
             <form class="form" role="search" action="{% url 'search_image' %}">
 
                 <div class="input-group">
@@ -25,8 +25,8 @@
                  <small>Trending searches: fashion, travel</small>
 
               </form>
-            <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </p>
-            <a href="singlepage.html">VIEW GALLERY</a>
+            <p>Taking an image, freezing a moment, reveals how rich reality truly is </p>
+            <a href="#gallery">VIEW GALLERY</a>
         </div>
     </div>
 </div>
@@ -34,7 +34,7 @@
 
 <div class="container wrap">
     <!-- Looping through news -->
-    <div class="row">
+    <div class="row" id="gallery">
     {% for image in images %}
 
         <!-- displaying News articles -->
@@ -78,7 +78,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-9 col-lg-9">
-                            <img src="{{image.pic.url}}" class="img-thumbnail" alt="Image">
+                            <a href="{% url 'single' category_name=image.image_category.name image_id=image.id %}"><img src="{{image.pic.url}}" class="img-thumbnail" alt="Image" style="cursor:pointer"></a>
                         </div>
                         <div class="col-md-3">
                             <h4>Location</h4>

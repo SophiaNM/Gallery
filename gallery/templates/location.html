@@ -72,7 +72,8 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-9 col-lg-9">
-                            <img src="{{image.pic.url}}" class="img-thumbnail" alt="Image">
+                            <a href="{% url 'single' category_name=image.image_category.name image_id=image.id %}"><img src="{{image.pic.url}}" class="img-thumbnail" alt="Image" style="cursor:pointer"></a>
+
                         </div>
                         <div class="col-md-3">
                             <h4>Location</h4>
