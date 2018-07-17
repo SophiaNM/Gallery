@@ -140,6 +140,7 @@ div.navbar-nav.ml-auto{
 .text-muted.abt{
     font-size: 15px;
 }
+
 /* End of Navbar Styles */
 
 /* Styles for the home page*/
@@ -424,10 +425,14 @@ h5.modal-title{
         overflow: auto;
     }
     button.btn.btn-secondary{
-        display: none;
+        /* display: none; */
     }
     h5#deleteModalLabel.modal-title{
         margin: 0px;
+    }
+    img.splash{
+        max-width: 240px;
+        margin: 0 auto;
     }
 }
 
@@ -469,7 +474,7 @@ h5.modal-title{
         overflow: auto;
     }
     button.btn.btn-secondary{
-        display: none;
+        /* display: none; */
     }
     h5#deleteModalLabel.modal-title{
         margin: 0px;
@@ -520,9 +525,7 @@ h5.modal-title{
         max-width: 150px;
         overflow: auto;
     }
-    button.btn.btn-secondary{
-        display: none;
-    }
+
     h5#deleteModalLabel.modal-title{
         margin: 0px;
     }
@@ -586,5 +589,10 @@ h5.modal-title{
         min-height: 300px;
     }
 }
-
+@media screen and (min-width: 456px){
+div img.splash{
+    max-width: 436px;
+    max-height: 245
+}
+}
 /* End of Responsive design */

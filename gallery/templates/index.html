@@ -70,7 +70,7 @@
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-9 col-lg-9">
-                                <a href="{% url 'single' category_name=image.image_category.name image_id=image.id %}"><img src="{{image.pic.url}}" class="img-thumbnail" alt="Image" style="cursor:pointer"></a>
+                                <a href="{% url 'single' category_name=image.image_category.name image_id=image.id %}"><img id="img{{image.id}}" src="{{image.pic.url}}" class="img-thumbnail" alt="Image" style="cursor:pointer"></a>
                             </div>
                             <div class="col-md-3">
                                 <h4 class = "desc">Location</h4>
@@ -85,8 +85,9 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <input class="form-control" type="text" value="{{image.image_link}}" id="link">
-                       <a onclick="myFunction()"><button type="button"  class="btn btn-primary">Copy Link</button></a>
+                        <button type="button" class="btn btn-secondary" onclick="copy('img{{image.id}}')">Copy Link</button>
+                        <!-- <input class="form-control" type="text" value="{{image.image_link}}" id="link">
+                       <a onclick="myFunction()"><button type="button"  class="btn btn-primary">Copy Link</button></a> -->
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
