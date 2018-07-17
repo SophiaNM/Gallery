@@ -20,12 +20,4 @@ $(document).ready(function(){
         document.getElementById('sideNav').style.width = "290px";
     })
 
-    myFunction() {
-      var copyText = document.getElementById("link");
-      copyText.select();
-      document.execCommand("Copy");
-      alert("Copied the text: " + copyText.value);
-    }
-
-
 })
