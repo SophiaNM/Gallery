@@ -17,11 +17,11 @@ class LocationTestCLass(TestCase):
         locations = Location.objects.all()
         self.assertTrue(len(locations) > 0)
 
-    # def test_delete_method(self):
-    #     self.loc.save_location()
-    #     self.loc.delete_location()
-    #     location = Location.objects.all()
-    #     self.assertTrue(len(location) == 0)
+    def test_delete_method(self):
+        self.loc.save_location()
+        self.loc.delete_location()
+        location = Location.objects.all()
+        self.assertTrue(len(location) == 0)
 
     def test_update(self):
         location = Location.get_location_id(self.loc.id)
@@ -29,8 +29,6 @@ class LocationTestCLass(TestCase):
         location = Location.get_location_id(self.loc.id)
         self.assertTrue(location.name == 'Donholm')
 
-    def tearDown(self):
-        self.loc.delete_location()
 
 
 class CategoryTestClass(TestCase):
@@ -46,12 +44,12 @@ class CategoryTestClass(TestCase):
         self.cat.save_category()
         category = Category.objects.all()
         self.assertTrue(len(category) > 0)
-    #
-    # def test_delete_method(self):
-    #     self.cat.save_category()
-    #     self.cat.delete_category()
-    #     category = Category.objects.all()
-    #     self.assertTrue(len(category) == 0)
+
+    def test_delete_method(self):
+        self.cat.save_category()
+        self.cat.delete_category()
+        category = Category.objects.all()
+        self.assertTrue(len(category) == 0)
 
     def test_update(self):
         category = Category.get_category_id(self.cat.id)
@@ -59,8 +57,6 @@ class CategoryTestClass(TestCase):
         category = Category.get_category_id(self.cat.id)
         self.assertTrue(category.name == 'Travel')
 
-    def tearDown(self):
-        self.cat.delete_category()
 
 
 class ImageTestClass(TestCase):
@@ -104,17 +100,12 @@ class ImageTestClass(TestCase):
 
     def test_filter_by_location(self):
         images = Image.filter_by_location('1')
+        print(images)
         self.assertTrue(len(images)>0)
 
-    # def test_update_image(self):
-    #     image = Image.get_image_by_id(self.image.id)
-    #     image.update_image( name = 'test update')
-    #     image = Image.get_image_by_id(self.image.id)
-    #     self.assertTrue(image.name == 'test update')
-
-    # def test_delete_method(self):
-    #     self.cat.delete_category()
-    #     self.loc.delete_location()
-    #     self.image.delete_image()
-    #     images = Image.objects.all()
-    #     self.assertTrue(len(images) == 0)
+    def test_update_image(self):
+        image = Image.get_image_by_id(self.image.id)
+        image = Image.update_image( id = self.image.id, name='test update', description='my test',image_link='https://gdh',image_location=self.loc, image_category=self.cat)
+        image = Image.get_image_by_id(self.image.id)
+        print(image)
+        self.assertTrue(Image.name == 'test update')
