@@ -2,10 +2,10 @@
 
 ### Prerequisite
 The Sunsplash project requires a prerequisite understanding of the following:
--Django Framework
--Python3.6
--Postgres
--Python virtualenv
+- Django Framework
+- Python3.6
+- Postgres
+- Python virtualenv
 
 ## BDD
 | Behavior            | Input                         | Output                        |
@@ -15,9 +15,6 @@ The Sunsplash project requires a prerequisite understanding of the following:
 | View pictures by location | Click on location of interest in menu bar | Displays photographs of chosen location |
 | Copy Link to clipboard | Click on copy link button in the modal class | Copies link to clipboard |
 | View Single picture | Click on photo of interest then click on image | Displays a single page with details of the picture and related images |
-
-
-
 
 
 ## Setup and installation
@@ -40,7 +37,7 @@ Create .env file and paste paste the following filling where appropriate:
     PASSWORD = '<password>'
     DEBUG = True
 #### Run initial Migration
-    python3.6 manage.py makemigrations album
+    python3.6 manage.py makemigrations gallery
     python3.6 manage.py migrate
 #### Run the app
     python3.6 manage.py runserver
