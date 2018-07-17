@@ -6,6 +6,8 @@ html, body{
 
 }
 /* Navbar Styling */
+@media screen and (min-width: 992px){
+
 div.container.navigation{
     height: 62px;
 }
@@ -62,6 +64,7 @@ div.collapse.navbar-collapse{
 div.navbar-nav.ml-auto{
         padding-left: 150px;
         text-align: right;
+}
 }
 
 .nav-side {
@@ -159,9 +162,6 @@ div.container.top{
 }
 small{
     color: #c3c3c3;
-    text-align: right;
-    width: 100%;
-    margin-right: 600px;
 }
 .header {
     background: #FFF;
@@ -359,7 +359,7 @@ div.col-xs-6.col-sm-4.col-md-3.col-lg-3{
     padding: 0 4px;
 }
 
-.desc{
+h2,p.desc{
     padding-top: 10px;
     padding-left: 30px;
 }
@@ -383,3 +383,208 @@ h5.modal-title{
     margin-left: 160px;
 }
 /* End of Gallery styles */
+
+@media screen and (max-width: 455px){
+    .banner{
+        min-height: 600px;
+    }
+    .cover{
+        min-height: 600px;
+    }
+    h2#category{
+        font-size: 28px;
+    }
+    .abt{
+        margin: 0px;
+    }
+    h5.modal-title.about{
+        margin: 0px;
+    }
+    div.modal-dialog{
+        max-width: 300px;
+        min-width: 280px;
+    }
+    div.modal-content{
+        max-width: 300px;
+        min-width: 280px;
+        font-size: 0.8em;
+    }
+    h4.desc{
+        font-size: 18px;
+        padding: 0px;
+    }
+    h2.desc{
+        font-size: 20px;
+    }
+    .desc{
+        padding: 0px 15px;
+    }
+    input#link.form-control{
+        max-width: 150px;
+        overflow: auto;
+    }
+    button.btn.btn-secondary{
+        display: none;
+    }
+    h5#deleteModalLabel.modal-title{
+        margin: 0px;
+    }
+}
+
+
+/* Responsive Design Styling */
+@media screen and (min-width: 340px) and (max-width: 455px){
+    h2#category{
+        font-size: 28px;
+    }
+    .abt{
+        margin: 0px;
+    }
+    h5.modal-title.about{
+        margin: 0px;
+    }
+    div.modal-dialog{
+        max-width: 340px;
+        min-width: 280px;
+        margin: 0 auto;
+    }
+    div.modal-content{
+        max-width: 340px;
+        min-width: 280px;
+        font-size: 0.8em;
+    }
+    h4.desc{
+        font-size: 18px;
+        padding: 0px;
+
+    }
+    h2.desc{
+        font-size: 20px;
+    }
+    .desc{
+        padding: 0px 15px;
+    }
+    input#link.form-control{
+        max-width: 150px;
+        overflow: auto;
+    }
+    button.btn.btn-secondary{
+        display: none;
+    }
+    h5#deleteModalLabel.modal-title{
+        margin: 0px;
+    }
+
+}
+
+@media screen and (min-width: 456px) and (max-width: 500px){
+    .banner{
+        min-height: 550px;
+    }
+    .cover{
+        min-height: 550px;
+    }
+}
+
+@media screen and (min-width: 456px) and (max-width: 576px) {
+    h2#category{
+        font-size: 28px;
+    }
+    .abt{
+        margin: 0px;
+    }
+    h5.modal-title.about{
+        margin: 0px;
+    }
+    div.modal-dialog{
+        max-width: 454px;
+        min-width: 280px;
+        margin: 0 auto;
+    }
+    div.modal-content{
+        max-width: 454px;
+        min-width: 280px;
+        font-size: 0.8em;
+    }
+    h4.desc{
+        font-size: 18px;
+        padding: 0px;
+    }
+    h2.desc{
+        font-size: 20px;
+    }
+    .desc{
+        padding: 0px 15px;
+    }
+    input#link.form-control{
+        max-width: 150px;
+        overflow: auto;
+    }
+    button.btn.btn-secondary{
+        display: none;
+    }
+    h5#deleteModalLabel.modal-title{
+        margin: 0px;
+    }
+}
+@media screen and (min-width: 577px) and (max-width: 1010px){
+    h2#category{
+        font-size: 28px;
+    }
+    .abt{
+        margin: 0px;
+    }
+    h5.modal-title.about{
+        margin: 0px;
+    }
+    div.modal-dialog{
+        max-width: 575px;
+        min-width: 280px;
+        margin: 0 auto;
+    }
+    div.modal-content{
+        max-width: 575px;
+        min-width: 280px;
+        font-size: 0.8em;
+    }
+    h4.desc{
+        font-size: 22px;
+    }
+    h2.desc{
+        font-size: 26px;
+    }
+    input#link.form-control{
+        max-width: 300px;
+        overflow: auto;
+    }
+
+    h5#deleteModalLabel.modal-title{
+        margin: 0px;
+    }
+
+}
+@media screen and (min-width: 501px) and (max-width: 1200px){
+    .banner{
+        min-height: 500px;
+    }
+    .cover{
+        min-height: 500px;
+    }
+
+}
+
+@media screen and (max-width: 1200px){
+    .social{
+        display: none;
+    }
+}
+@media screen and (max-width: 628px){
+    .banner-1{
+        min-height: 300px;
+    }
+    .cover-1{
+        min-height: 300px;
+    }
+}
+
+/* End of Responsive design */
