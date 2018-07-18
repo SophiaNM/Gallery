@@ -27,10 +27,17 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+UPLOADCARE = {
+    'pub_key':'614dd5e64b914d471f69',
+    'secret':'f82cf03e4d60324f27c3',
+}
+
+
 
 # Application definition
 
 INSTALLED_APPS = [
+    'pyuploadcare.dj',
     'gallery',
     'bootstrap4',
     'django.contrib.admin',
