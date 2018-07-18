@@ -68,7 +68,7 @@ class ImageTestClass(TestCase):
         self.loc = Location(name="Africa")
         self.loc.save_location()
 
-        self.image = Image(name='image test', description='my test',image_link='https://gdh',image_location=self.loc, image_category=self.cat)
+        self.image = Image(name='image test', description='my test',image_location=self.loc, image_category=self.cat)
         self.image.save_image()
 
     def test_instance(self):
@@ -99,13 +99,13 @@ class ImageTestClass(TestCase):
         self.assertTrue(len(images)>0)
 
     def test_filter_by_location(self):
-        images = Image.filter_by_location('1')
+        images = Image.fil0ter_by_location('1')
         print(images)
         self.assertTrue(len(images)>0)
 
     def test_update_image(self):
-        image = Image.get_image_by_id(self.image.id)
-        image = Image.update_image( id = self.image.id, name='test update', description='my test',image_link='https://gdh',image_location=self.loc, image_category=self.cat)
-        image = Image.get_image_by_id(self.image.id)
-        print(image)
+        self.image.save_image()
+        image = Image.update_image( self.image.id, 'test update', 'my test',self.loc, self.cat)
+        upimage = Image.objects.filter(id = self.image.id)
+        print(upimage)
         self.assertTrue(Image.name == 'test update')
