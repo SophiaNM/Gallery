@@ -45,10 +45,10 @@
     </div>
     <div class="row">
         <div class="col-sm-6 col-md-6 col-lg-6">
-            <img src="" alt="">
+            <img src="{% static 'images/sorry.png' %}" alt="">
         </div>
         <div class="col-sm-6 col-md-6 col-lg-6">
-            <h2 class="text-center"> Sorry no image are comming soon.</h2>
+            <h2 class="text-center"> Sorry no image for {{image.image_category.name}}. Images are comming soon.</h2>
         </div>
     </div>
     {% endfor %}
