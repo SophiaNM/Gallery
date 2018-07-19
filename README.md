@@ -1,4 +1,4 @@
-# ![](https://github.com/SophiaNM/Gallery/blob/master/gallery/static/images/cam5.png | width = 48)SUNSPLASH Gallery App
+# ![](https://github.com/SophiaNM/Gallery/blob/master/gallery/static/images/git.png)SUNSPLASH Gallery App
 This is an Independent project for Moringa Core Django module, July 13th 2018.
 
 ## Description
