@@ -24,10 +24,40 @@ View the complete site [here](https://sunsplash-sophia.herokuapp.com/)
     - Heroku
 
 ## Specifications
-To view installation requirements, procedure and BDD check the [specs file](specs.md).
+To view the user dtories or BDD check the [specs file](specs.md).
 
-### Contributions
-Yet to complete all tests for each model class. If you have ideas you may contribute to this project.
+### Prerequisite
+The Sunsplash project requires a prerequisite understanding of the following:
+- Django Framework
+- Python3.6
+- Postgres
+- Python virtualenv
+
+## Setup and installation
+
+#### Clone the Repo
+####  Activate virtual environment
+Activate virtual environment using python3.6 as default handler
+    `virtualenv -p /usr/bin/python3.6 venv && source venv/bin/activate`
+####  Install dependancies
+Install dependancies that will create an environment for the app to run `pip3 install -r requirements.txt`
+####  Create the Database
+    - psql
+    - CREATE DATABASE gallery;
+####  .env file
+Create .env file and paste paste the following filling where appropriate:
+
+    SECRET_KEY = '<Secret_key>'
+    DBNAME = 'gallery'
+    USER = '<Username>'
+    PASSWORD = '<password>'
+    DEBUG = True
+#### Run initial Migration
+    python3.6 manage.py makemigrations gallery
+    python3.6 manage.py migrate
+#### Run the app
+    python3.6 manage.py runserver
+    Open terminal on localhost:8000
 
 ## Known bugs
 No known bugs so far. If found drop me an email.
